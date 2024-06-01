@@ -7,6 +7,8 @@ You can check the first task by running the `build-run-check.sh` script in the `
     ./build-run-check.sh
 
 ### Second task:
+You should shutdown previously launched container before acting with docker compose.
+
 To check the second task, go back to the root of the repository and enter the following command:
 
     docker compose up -d
