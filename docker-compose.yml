@@ -1,0 +1,24 @@
+services:
+  go-web-service:
+    image: denjia74/go-web
+    container_name: golang_app
+    environment: 
+      - PORT=8080
+    expose:
+      - "8080"
+    networks:
+      - app-network
+
+  nginx:
+    image: denjia74/nginx-proxy
+    container_name: nginx
+    ports:
+      - '80:80'
+    depends_on:
+      - "go-web-service"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
